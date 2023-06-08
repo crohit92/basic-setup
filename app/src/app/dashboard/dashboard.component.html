@@ -1,0 +1,16 @@
+<button class="btn btn-primary" (click)="loadForecasts()">Load Data</button>
+<button class="btn btn-primary">Logout</button>
+<ul>
+  <li class="row">
+    <div class="col">Date</div>
+    <div class="col">Summary</div>
+    <div class="col">Degree Celcius</div>
+    <div class="col">Degree Faranheit</div>
+  </li>
+  <li *ngFor="let forecast of forecasts$ | async" class="row">
+    <div class="col">{{ forecast.date | date }}</div>
+    <div class="col">{{ forecast.summary }}</div>
+    <div class="col">{{ forecast.temperatureC }}</div>
+    <div class="col">{{ forecast.temperatureF }}</div>
+  </li>
+</ul>
